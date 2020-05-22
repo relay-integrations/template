@@ -2,9 +2,9 @@ apiVersion: integration/v1
 kind: Trigger
 name: template
 version: 1
-summary: Step template
+summary: Trigger template
 description: |
-  This is a template for a simple step.
+  This is a template for a simple trigger.
 
 responders:
 - webhook
