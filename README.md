@@ -69,7 +69,7 @@ This integration allows you to connect Foobar to Relay. Foobar is a ...
 
 | Name | Description |
 |------|-------------|
-| [foobar-example-workflow.yaml](workflows/foobar-example-workflow) | This workflow shows you how to link the Foobar steps and triggers together |
+| [example1.yaml](workflows/example1/) | This workflow shows you how to link the Foobar steps and triggers together |
 
 ## Contributing
 
