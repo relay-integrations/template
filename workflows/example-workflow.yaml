@@ -1,0 +1,26 @@
+# For a full description of workflow syntax, see 
+# https://relay.sh/docs/reference/relay-workflows/
+
+description: Example workflow to show off the Foobar integration
+
+parameters:
+  message:
+    description: "Something to output from the template step"
+    default: "Workflow default"
+  webhook:
+    description: "The contents of the webhook handled by the template trigger"
+
+triggers:
+  name: template-trigger
+  source: webhook
+  image: myregistryuser/foobar-trigger-template
+  binding:
+    parameters:
+      webhook: !Data webhook
+
+steps:
+  name: template-step
+  image: myregistryuser/foobar-step-template
+  spec:
+    parameters:
+      message: !Parameter message
