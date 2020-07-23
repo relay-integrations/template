@@ -1,4 +1,4 @@
-FROM python:3-alpine
+FROM relaysh/core:latest-python
 WORKDIR /trigger
 COPY handler.py .
 CMD python handler.py

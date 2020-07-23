@@ -1,13 +1,25 @@
-import http.server
-import socketserver
-import os
+# simple webhook responder that just puts the entire
+# content of the webhook into a parameter for use by a 
+# workflow.
 
-PORT = os.getenv('PORT', '8080')
+from relay_sdk import Interface, WebhookServer
+from quart import Quart, request, jsonify, make_response
 
-class WebhookHandler(http.server.BaseHTTPRequestHandler):
-    def do_POST(self):
-        """handle webhook request here"""
+relay = Interface()
+app = Quart('my-app')
 
-with socketserver.TCPServer(('', int(PORT)), WebhookHandler) as httpd:
-    print("serving at port", PORT)
-    httpd.serve_forever()
+@app.route('/', methods=['POST'])
+async def handler():
+
+    payload = await request.get_json()
+    if payload is None:
+        return {'message': 'not a valid webhook'}, 400, {}
+
+    relay.events.emit({
+          'webhook_contents': payload
+      })
+
+    return {'message': 'success'}, 200, {}
+
+if __name__ == '__main__':
+    WebhookServer(app).serve_forever()
