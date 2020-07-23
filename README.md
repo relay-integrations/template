@@ -4,7 +4,7 @@ This repository serves as a template for creating new Relay integration reposito
 
 ## Directory structure
 
-````
+```
 .
 ├── integration.yaml    # metadata describing the integration as a whole
 ├── LICENSE             # defaults to Apache, replace if that doesn't suit
@@ -12,11 +12,13 @@ This repository serves as a template for creating new Relay integration reposito
 ├── README.md           # you're reading it right now
 ├── steps               # subdirectory for containerized steps
 │  └── template           # rename this to your own step's name
+|     ├── README.md       # detail about how to use this step
 │     ├── Dockerfile      # needed to build the container
 │     ├── step.sh         # entrypoint script (plus any additional files)
 │     └── step.yaml       # step metadata 
 ├── triggers            # subdirectory for triggers
 │  └── template           # rename this to your trigger's name
+|     ├── README.md       # detail about how to use this trigger
 │     ├── Dockerfile      # ... 
 │     ├── handler.py      # Entrypoint webhook handler script
 │     └── trigger.yaml    # trigger metadata
