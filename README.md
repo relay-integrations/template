@@ -28,9 +28,7 @@ This repository serves as a template for creating new Relay integration reposito
 
 ## Metadata definition
 
-The example metadata files show the complete specification with
-all fields present. The formal specification for the metadata is in
-the [Relay Integrations RFC](https://github.com/puppetlabs/relay-rfcs/blob/master/content/0006-integration-layout/rfc.md).
+The example metadata files show the minimum required information. The formal specification for the metadata is in the [Relay Integrations RFC](https://github.com/puppetlabs/relay-rfcs/blob/master/content/0006-integration-layout/rfc.md).
 
 ## Naming conventions
 
