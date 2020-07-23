@@ -23,7 +23,10 @@ This repository serves as a template for creating new Relay integration reposito
 │     ├── handler.py      # Entrypoint webhook handler script
 │     └── trigger.yaml    # trigger metadata
 └── workflows           # subdirectory for example workflows
-   └── example1.yaml      # show how to use the steps/triggers
+   └── example1           # an example workflow
+      ├── README.md          # how to use this workflow
+      ├── example1.png       # picture of workflow graph from app
+      └── example1.yaml      # the workflow itself
 ```
 
 ## Metadata definition
