@@ -19,16 +19,17 @@ publish:
 # optional list of examples; each one can be a Step or a complete Workflow
 examples:
 - summary: An example workflow using this step
-  apiVersion: v1
-  kind: Workflow
-  parameters:
-    message:
-      description: The message to emit
-      default: Hello, world
-  steps:
-    image: relaysh/template
-    spec:
-      message: !Parameter message
+  content:
+    apiVersion: v1
+    kind: Workflow
+    parameters:
+      message:
+        description: The message to emit
+        default: Hello, world
+    steps:
+      image: relaysh/template
+      spec:
+        message: !Parameter message
 
 schemas:
   spec:
